@@ -17,7 +17,7 @@ const Header = () => {
         <img
           src="https://freelogopng.com/images/all_img/1682570982gmail-name-logo.png"
           alt="Gmail Logo"
-          height="30"
+          height="20"
           width="100"
         />
       </div>
