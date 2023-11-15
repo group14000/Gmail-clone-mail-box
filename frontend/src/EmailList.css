@@ -1,0 +1,127 @@
+.emailist {
+    display: flex ;
+    flex-direction: column;
+}
+
+/* Email List Settings */
+
+.emaillistsettings {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.emaillistsettings svg {
+    font-size: 18px;
+}
+
+.emaillistsettings_right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.emaillistsettings_right p {
+    font-size: 13px;
+}
+/* EmailType */
+.emailtype {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.emailtype > .emailtype_options {
+    display: flex;
+    align-items: center;
+    min-width: 230px;
+    padding: 0px 10px;
+    cursor: pointer;
+    border-bottom: 3px solid white;
+}
+
+.emailtype > .emailtype_options svg {
+    font-size: 20px;
+    color: grey;
+    margin-right: 10px;
+}
+
+.emailtype > .emailtype_options  p {
+    font-size: 15px;
+}
+
+.emailtype > .emailtype_options:hover{
+    background-color: whitesmoke;
+}
+
+.emailtype_options--active {
+    border-bottom: 3px solid #d93025 !important;
+}
+
+.emailtype_options--active p, 
+.emailtype_options--active svg {
+    color: #d93025 !important;
+    font-weight: bold;
+}
+
+
+/* Emailbody */
+
+.emailbody{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+    padding: 0px 10px;
+    height: 40px;
+}
+
+.emailbody .emailbody_left {
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    flex: 20%;
+}
+
+.emailbody .emailbody_middle {
+    display: flex;
+    align-items: center;
+    flex: 90%;
+}
+.emailbody_middle .emailbody_middle_msg 
+
+.emailbody .emailbody_right{
+    display: flex;
+    align-items: center;
+    flex: 10%;
+}
+
+.emailbody .emailbody_left svg {
+    font-size: 18px;
+    color: grey;
+    margin-right: 15px;
+}
+
+.emailbody .emailbody_left h4 {
+    font-size: 14px;
+}
+
+.emailbody .emailbody_right p{
+    font-size: 12px;
+}
+
+.emailbody .emailbody_middle p{
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding:0px 20px;
+    max-width: 700px;
+}
+
+.emailbody:hover{
+    box-shadow: 2px 2px 4px whitesmoke;
+    cursor: pointer;
+}
