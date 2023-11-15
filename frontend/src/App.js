@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import EmailList from "./EmailList";
+import Compose from "./Compose";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div className="app_body">
         <Sidebar />
         <EmailList />
+        <Compose/>
       </div>
     </div>
   );
