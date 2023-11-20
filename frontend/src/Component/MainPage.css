@@ -1,0 +1,36 @@
+.mainPage{
+  background-image: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0yODMtYWRqLTAxM18yLmpwZw.jpg');
+
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mailbox-content {
+  padding: 20px;
+  font-size: larger;
+  font: bold;
+}
+.text-editor {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  margin-top: 20px;
+}
+.inbox-btn {
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+.logout-btn {
+  justify-content: flex-end;
+  color: red;
+  margin-right: 15px;
+}
