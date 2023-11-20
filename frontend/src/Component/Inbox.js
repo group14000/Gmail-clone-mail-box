@@ -35,14 +35,14 @@ const EmailList = () => {
 
   const markEmailAsUnread = (emailId) => {
     fetch(
-      `https://mailbox-client-ce33a-default-rtdb.firebaseio.com/email/${emailId}.json`
+      `https://mail-box-7ffa4-default-rtdb.firebaseio.com/email/${emailId}.json`
     )
       .then((response) => response.json())
       .then((emailData) => {
         emailData.blueTick = false;
 
         fetch(
-          `https://mailbox-client-ce33a-default-rtdb.firebaseio.com/email/${emailId}.json`,
+          `https://mail-box-7ffa4-default-rtdb.firebaseio.com/email/${emailId}.json`,
           {
             method: "PUT",
             body: JSON.stringify(emailData),
@@ -66,7 +66,7 @@ const EmailList = () => {
 
 
   const deleteEmail = (emailId) => {
-    deleteResource(`https://mailbox-client-ce33a-default-rtdb.firebaseio.com/email/${emailId}.json`)
+    deleteResource(`https://mail-box-7ffa4-default-rtdb.firebaseio.com/email/${emailId}.json`)
       .then((data) => {
         console.log('Email deleted from Firebase');
         dispatch({ type: 'email/deleteEmail', payload: emailId });

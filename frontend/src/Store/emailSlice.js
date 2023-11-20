@@ -8,7 +8,7 @@ const initialState = {
 
 export const fetchEmails = createAsyncThunk("emails/fetchEmails", async () => {
   const response = await fetch(
-    "https://mailbox-client-ce33a-default-rtdb.firebaseio.com/email.json"
+    "https://mail-box-7ffa4-default-rtdb.firebaseio.com/email.json"
   );
   const data = await response.json();
 
@@ -31,7 +31,7 @@ export const fetchEmailsPeriodically = createAsyncThunk(
     setInterval(async () => {
       try {
         const response = await fetch(
-          "https://mailbox-client-ce33a-default-rtdb.firebaseio.com/email.json"
+          "https://mail-box-7ffa4-default-rtdb.firebaseio.com/email.json"
         );
         const data = await response.json();
 
