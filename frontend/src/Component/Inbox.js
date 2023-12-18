@@ -86,48 +86,57 @@ const EmailList = () => {
   }, [filteredEmails]);
 
   return (
-    <div className="inbox-main">
-      <div className="navbar">
-        <div className="mailbox-content">
-          <span>Welcome to your mailbox</span>
-        </div>
-        <Button className="compose-btn" onClick={backHandler}>
-          Back
-        </Button>
+<div className="inbox-main min-h-screen flex flex-col lg:flex-row">
+  <div className="lg:w-1/4 bg-gray-200 p-4">
+    <div className="mb-4">
+      <div className="text-lg font-bold text-gray-800">
+        Welcome to your mailbox
       </div>
-      <div className="email-list-container">
-        <h2 className="h2-tag">Emails</h2>
-        <div className="unread-count">Unread: {unreadCount}</div>
-        <ul className="email-list">
-          {filteredEmails.length > 0 ? (
-            filteredEmails.map((email) => (
-              <div key={email.id} className="email-item">
-                <Button variant="outline-danger">
-                  <Image
-                    onClick={() => deleteEmail(email.id)}
-                    src="https://cdn4.iconfinder.com/data/icons/round-buttons/512/blue_x.png"
-                    alt="Delete"
-                    style={{ width: "25px", height: "25px" }}
-                  />
-                </Button>
-                <Link to={`/emails/${email.id}`}>
-                  <li
-                    className={`email-item `}
-                    onClick={() => markEmailAsUnread(email.id)}
-                  >
-                    {email.blueTick ? <BlueTick /> : null}
-                    <strong>Sender:</strong> {email.sender}
-                    <strong> Subject:</strong> {email.subject}
-                  </li>
-                </Link>
-              </div>
-            ))
-          ) : (
-            <p className="no-emails-message">No emails to display.</p>
-          )}
-        </ul>
-      </div>
+      <Button className="compose-btn mt-2" onClick={backHandler}>
+        Back
+      </Button>
     </div>
+  </div>
+
+  <div className="lg:w-3/4 p-4">
+    <h2 className="text-2xl font-bold mb-4">Emails</h2>
+    <div className="mb-4 text-gray-600">Unread: {unreadCount}</div>
+    <ul className="email-list">
+      {filteredEmails.length > 0 ? (
+        filteredEmails.map((email) => (
+          <div key={email.id} className="email-item border-b border-gray-300 py-2">
+            <Button
+              variant="outline-danger"
+              className="mr-2"
+              onClick={() => deleteEmail(email.id)}
+            >
+              <Image
+                src="https://cdn4.iconfinder.com/data/icons/round-buttons/512/blue_x.png"
+                alt="Delete"
+                style={{ width: "25px", height: "25px" }}
+              />
+            </Button>
+            <Link to={`/emails/${email.id}`} className="text-blue-500">
+              <li
+                className={`email-item cursor-pointer ${
+                  email.blueTick ? "text-blue-500" : "text-gray-800"
+                }`}
+                onClick={() => markEmailAsUnread(email.id)}
+              >
+                {email.blueTick && <BlueTick />}
+                <strong className="mr-1">Sender:</strong> {email.sender}
+                <strong className="ml-4">Subject:</strong> {email.subject}
+              </li>
+            </Link>
+          </div>
+        ))
+      ) : (
+        <p className="no-emails-message">No emails to display.</p>
+      )}
+    </ul>
+  </div>
+</div>
+
   );
 };
 

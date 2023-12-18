@@ -8,7 +8,6 @@ import {
   Col,
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -90,68 +89,91 @@ const Login = () => {
 
   return (
     <>
-      <h2 className="text-center neon-text flex mt-5">
-        {" "}
-        WELCOME TO MAILBOX 
+      <h2 className="text-center text-4xl font-bold text-white mb-8">
+        WELCOME TO MAILBOX
       </h2>
-      <br />
-      <br />
 
-      <div className="main-div">
-        <Container className="p-3 my-4 d-flex flex-column ">
-          <div className="text-center mb-3">
+      <div className="main-div bg-gray-100 p-8 rounded-lg shadow-md">
+        <div className="container mx-auto p-4">
+          <div className="text-center mb-6">
             <p
-              className={`neon-text ${isLogin ? "neon-signin" : "neon-signup"}`}
+              className={`text-2xl font-bold neon-text ${
+                isLogin ? "neon-signin" : "neon-signup"
+              }`}
             >
               {isLogin ? "Sign in" : "Sign up"}
             </p>
           </div>
 
-          <Form.Group className="mb-4">
-            <Form.Label>Email address</Form.Label>
-            <FormControl type="email" required ref={emailInputRef} />
-          </Form.Group>
+          <div className="mb-4">
+            <label className="block text-sm font-semibold mb-2">
+              Email address
+            </label>
+            <input
+              type="email"
+              required
+              ref={emailInputRef}
+              className="w-full py-2 px-3 border rounded-sm"
+            />
+          </div>
 
-          <Form.Group className="mb-4">
-            <Form.Label>Password</Form.Label>
-            <FormControl type="password" ref={passwordInputRef} />
-          </Form.Group>
+          <div className="mb-4">
+            <label className="block text-sm font-semibold mb-2">Password</label>
+            <input
+              type="password"
+              ref={passwordInputRef}
+              className="w-full py-2 px-3 border rounded-sm"
+            />
+          </div>
 
           {!isLogin && (
-            <Form.Group className="mb-4">
-              <Form.Label>Confirm Password</Form.Label>
-              <FormControl
+            <div className="mb-4">
+              <label className="block text-sm font-semibold mb-2">
+                Confirm Password
+              </label>
+              <input
                 type="password"
                 ref={confirmPasswordInputRef}
                 required
+                className="w-full py-2 px-3 border rounded-sm"
               />
-            </Form.Group>
+            </div>
           )}
 
-          <Row className="mb-4">
-            <Col xs="auto" className="d-flex align-items-center">
-              <Form.Check
-                type="checkbox"
-                id="flexCheckDefault"
-                label="Remember me"
-              />
-            </Col>
-            <Col>
-              <a href="#!">Forgot password?</a>
-            </Col>
-          </Row>
+          <div className="flex items-center mb-4">
+            <input
+              type="checkbox"
+              id="flexCheckDefault"
+              className="text-sm mr-2"
+            />
+            <label htmlFor="flexCheckDefault" className="text-sm">
+              Remember me
+            </label>
+          </div>
 
-          <Button className="mb-4 w-100" onClick={submitHandler}>
+          <div className="mb-4">
+            <a href="#!" className="text-sm text-blue-500">
+              Forgot password?
+            </a>
+          </div>
+
+          <button
+            className="mb-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+            onClick={submitHandler}
+          >
             {isLogin ? "Sign in" : "Sign up"}
-          </Button>
+          </button>
 
-          <p className="text-center">
+          <p className="text-center text-sm">
             {isLogin ? "Not a member? " : "Already a member? "}
-            <span onClick={switchAuthHandler} className="link-text">
+            <span
+              onClick={switchAuthHandler}
+              className="link-text text-blue-500 cursor-pointer"
+            >
               {isLogin ? "Register" : "Sign in with an existing account"}
             </span>
           </p>
-        </Container>
+        </div>
       </div>
     </>
   );
