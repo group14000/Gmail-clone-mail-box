@@ -20,7 +20,7 @@ const ViewMail = () => {
     <div className='veiwMail-div'>
       <div className="navbar">
         <div className="mailbox-content">
-          <span className = "font-bold">Welcome to mailbox</span>
+          <span className = "font-bold">Welcome to your mailbox</span>
         </div>
         </div>
     <div className="view-mail-container">
